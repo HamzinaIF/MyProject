@@ -1,4 +1,4 @@
-package ru.innopolis.university.hw.hw.dz3;
+package ru.innopolis.university.lesson1.task3;
 //Throw
 public class Main {
     public static void main(String[] args) {
@@ -7,8 +7,6 @@ public class Main {
             MyClass.exception(s);
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
-        } finally {
-            System.out.println("Пример своего варианта ошибки через оператор throw");
         }
     }
 }

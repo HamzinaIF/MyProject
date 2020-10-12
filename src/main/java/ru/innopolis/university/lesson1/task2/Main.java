@@ -1,4 +1,4 @@
-package ru.innopolis.university.hw.hw.dz2;
+package ru.innopolis.university.lesson1.task2;
 //NullPointerException
 public class Main {
     public static void main(String[] args) {
@@ -7,8 +7,6 @@ public class Main {
             hello.hello();
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            System.out.println("Пример ошибки NullPointerException");
         }
     }
 }
