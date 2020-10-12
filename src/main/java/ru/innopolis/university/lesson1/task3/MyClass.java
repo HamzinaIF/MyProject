@@ -1,8 +1,8 @@
-package ru.innopolis.university.hw.hw.dz3;
+package ru.innopolis.university.lesson1.task3;
 //Мой класс
 public class MyClass {
     public static void exception(String s) throws Exception {
-        if (s.equals("Hello, world!"))
+        if ("Hello, world!".equals(s))
             throw new Exception("My Exception!");
     }
 }
