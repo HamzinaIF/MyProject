@@ -2,7 +2,7 @@ package ru.innopolis.university.lesson1.task5;
 import java.util.*;
 import static ru.innopolis.university.lesson1.task5.Person.add;
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         List<Person> person = new ArrayList<>();
         add(person);
         System.out.println("Несортированный массив:");
@@ -13,10 +13,15 @@ public class Main {
         person.sort(PersonComparator.comparator2);
         long finish = System.nanoTime();
         System.out.println("Время выполнения сортировкив наносекундах: " + (finish - start));
-        System.out.println("Сортированный массив:");
+        System.out.println("Сортированный массив компаратором:");
         for (Person p : person) {
             System.out.println(p.getAge() + " " + p.getSex() + " " + p.getName());
         }
+        long start1 = System.nanoTime();
+        Bubble bubble=new Bubble();
+        bubble.sortBubble(person);
+        long finish1 = System.nanoTime();
+        System.out.println("Время выполнения сортировкив наносекундах: " + (finish1 - start1));
     }
 }
 
