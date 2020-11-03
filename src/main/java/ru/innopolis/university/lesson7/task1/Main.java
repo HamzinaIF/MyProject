@@ -1,17 +1,20 @@
 package ru.innopolis.university.lesson7.task1;
+
 import java.io.*;
 import java.util.ArrayList;
-// Работа с файлами
+
 public class Main {
+    private static final String PATH_1 = "src/main/resources/Lesson7/notes1.txt";
+    private static final String PATH_2 = "src/main/resources/Lesson7/notes2.txt";  // "../../../../resources/text.txt" (для себя, чтоб далее применять)
+
     public static void main(String[] args) throws Exception {
         ArrayList<String> list = new ArrayList<>();
-        String path1 = "D:\\Users\\notes1.txt";  //путь к файлу
-        String path2 = "D:\\Users\\notes2.txt";
-        File file = new File(path1);
-        FileReaderWriter fileReaderWriter=new FileReaderWriter();
-        fileReaderWriter.fileReader(file, list);
+
+        File file = new File(PATH_1);
+        FileReaderWriter fileReaderWriter = new FileReaderWriter();
+        fileReaderWriter.readWordsFromFile(file);
         fileReaderWriter.textSorter(list);
-        fileReaderWriter.textWriter(path2, list);
+        fileReaderWriter.writeTextByPath(list,PATH_2);
     }
 }
 

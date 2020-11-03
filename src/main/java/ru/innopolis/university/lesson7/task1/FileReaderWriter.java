@@ -1,37 +1,37 @@
 package ru.innopolis.university.lesson7.task1;
+
 import java.io.*;
 import java.nio.charset.Charset;
 import java.util.*;
 
 public class FileReaderWriter {
+    private static final String DIVIDER = "\n";
 
-    public void fileReader(File file, List list) throws Exception {
-        Scanner scan = new Scanner(file); //считываем из файла
-        while (scan.hasNext()) {   //пока есть, что считывать
-            String word = scan.next();  //считываем 1 строку
+    public List<String> readWordsFromFile(File file) throws Exception {
+        final ArrayList<String> list = new ArrayList<>();
+        BufferedReader reader = new BufferedReader(new FileReader(file));
+        String word;
+        while ((reader.readLine()) != null) {
+            word = reader.readLine();
             list.add(word);
         }
-        scan.close();
+        reader.close();
+        return list;
     }
 
-    public void textSorter(List list) {
-        Set<String> set = new HashSet<>(list); //удаляем повторяющиеся слова
+    public void textSorter(List<String> list) {
+        Set<String> set = new HashSet<>(list);
         list.clear();
         list.addAll(set);
-        Collections.sort(list, new Comparator<String>() { //сортируем
-            @Override
-            public int compare(String s1, String s2) {
-                return s1.compareToIgnoreCase(s2);
-            }
-        });
+        Collections.sort(list, (s1, s2) -> s1.compareToIgnoreCase(s2));
     }
 
-    public void textWriter(String path2, List<String> list) {
+    public void writeTextByPath(List<String> text, String path) {
         try {
-            BufferedWriter bw2 = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path2), Charset.forName("Windows-1251")));
-            for (String el : list)
-                bw2.write(el + "\n");
-            bw2.close();  //закрыли поток
+            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path), Charset.forName("Windows-1251")));
+            for (String str : text) {
+                writer.write(str + DIVIDER);
+            }
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
