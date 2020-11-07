@@ -1,4 +1,4 @@
-package ru.innopolis.university.hw.hw.dz2;
+package ru.innopolis.university.lesson1.task2;
 //Мой класс
 public class Hello {
     public void hello() {
