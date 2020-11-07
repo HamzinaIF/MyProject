@@ -13,13 +13,13 @@ public class Person { //Класс Person
     }
     public int getAge() {
         return age;
-    }
+    }//метод возвращает возраст
     public String getSex() {
         return sex;
-    }
+    }//метод возвращает пол
     public String getName() {
         return name;
-    }
+    }//метод возвращает имя
     public static int setAge() { //метод заполняет рандомными значениями "Возраст"
         int random_age = (int) (Math.random() * 100); // генерация числа
         return random_age;
@@ -64,6 +64,7 @@ public class Person { //Класс Person
             scan.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+
         }
         try {
             Scanner scan = new Scanner(file2);//считываем из файла женских имен
@@ -86,7 +87,7 @@ public class Person { //Класс Person
         return (sex[n]);
     }
     public static void add(List person) {
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 100; i++) {
             int age = Person.setAge();
             String sex = Person.setSex();
             String name = Person.setName(sex);
