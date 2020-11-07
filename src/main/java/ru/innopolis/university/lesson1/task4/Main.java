@@ -1,5 +1,5 @@
-package ru.innopolis.university.hw.hw.dz4;
-import static ru.innopolis.university.hw.hw.dz4.MyClass.printNumber;
+package ru.innopolis.university.lesson1.task4;
+import static ru.innopolis.university.lesson1.task4.MyClass.printNumber;
 public class Main {
     public static void main(String[] args) {
         try {
