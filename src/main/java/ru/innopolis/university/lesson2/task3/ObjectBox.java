@@ -1,19 +1,21 @@
 package ru.innopolis.university.lesson2.task3;
 import java.util.*;
 public class ObjectBox <T>{
-    private final Collection<T> collection; //класс ObjectBox, который будет хранить коллекцию Object.
-
+    private Collection<T> collection;
 
     public ObjectBox(Collection<T> collection) {
         this.collection = collection;
     }
 
+    public ObjectBox() {
+    }
 
-    public void addObject(T object)  { //метод addObject, добавляющий объект типа T в коллекцию.
+
+    public void addObject(T object)  {
             collection.add(object);
 
     }
-    public void deleteObject(T object) { //метод deleteObject, проверяющий наличие объекта в коллекции и при наличии удаляющий его.
+    public void deleteObject(T object) {
             collection.remove(object);
 
     }
@@ -25,6 +27,8 @@ public class ObjectBox <T>{
     protected Collection<T> getCollection() {
         return collection;
     }
-
+    protected void setCollection(Collection<T> collection) {
+        this.collection = collection;
+    }
 
 }
